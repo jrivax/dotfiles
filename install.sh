@@ -39,9 +39,9 @@ dir=~/dotfiles
 files=".p10k.zsh .zshrc .gitconfig"
 
 # Create a dir to move the configuration files there
-if [ ! -d $dir]; then
+if [ ! -d $dir ]; then
     mkdir $dir
-fi    
+fi   
 
 for file in $files; do
     echo "Creating symlink to $file in home directory."
