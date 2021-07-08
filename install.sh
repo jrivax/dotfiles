@@ -54,7 +54,12 @@ done
 source .macos
 
 # Create private-profile
-cd ~
 touch .private-profile
-mkdir workspace
-mkdir tmp
+echo "create workspace"
+if [ ! -d ~/workspace ]; then
+    mkdir ~/workspace
+fi
+echo "create temporal file"
+if [ ! -d ~/tmp ]; then
+    mkdir ~/tmp
+fi
