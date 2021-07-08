@@ -1,7 +1,13 @@
 #!bin/bash
+# By FJRivax with love
 
+echo "Starting installation and configuration process"
+echo "Homebrew"
 # Install Homebrew ( package management )
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if [ ! has brew 2>/dev/null ]; then
+    echo "Installing Homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi    
 
 # Open Hammerspoon
 # open -a Hammerspoon
@@ -20,15 +26,18 @@ nvm install "lts/*"
 
 # Configure profile
 dir=~/dotfiles
-files=".zshrc"
+files=".p10k.zsh .zshrc .gitconfig"
 
 # Create a dir to move the configuration files there
-cd $dir
+if [ ! -d $dir]; then
+    mkdir $dir
+fi    
 
 for file in $files; do
     echo "Creating symlink to $file in home directory."
     [ -e ~/$file ] && rm ~/$file
     ln -s $dir/$file ~/$file
+    source $file
 done
 
 # Change MacOS configuration
