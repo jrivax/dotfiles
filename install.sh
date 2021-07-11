@@ -96,7 +96,7 @@ for file in $files; do
 done
 
 # Change MacOS configuration
-source .macos
+source ~/dotfiles/.macos
 
 # Create private-profile
 cd ~
