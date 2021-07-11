@@ -17,6 +17,8 @@ echo "SECTION -> Homebrew ( package management )"
 if ! hash brew 2>/dev/null; then
     echo "Installing homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    rm -rf "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core"
+    brew tap homebrew/core
 fi    
 echo "Installing Homebrew packages"
 if hash git 2>/dev/null && hash brew 2>/dev/null; then
