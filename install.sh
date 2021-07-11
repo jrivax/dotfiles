@@ -19,7 +19,10 @@ if [ ! has brew 2>/dev/null ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi    
 echo "Installing Homebrew packages"
-brew bundle
+if [ ! has git 2>/dev/null ]; then
+    git clone git@github.com:servo/servo.git
+    cd servo
+    brew bundle install --file=~/dotfiles/Brewfile
 echo "SECTION -> Dotfiles"
 # Clone our repo with dotfiles
 if [ ! -d $dir && ! has git 2>/dev/null ]; then
