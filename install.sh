@@ -20,13 +20,15 @@ if [ ! has brew 2>/dev/null ]; then
 fi    
 echo "Installing Homebrew packages"
 if [ ! has git 2>/dev/null ]; then
-    git clone git@github.com:servo/servo.git
+    echo "Clone servo repo"
+    git clone https://github.com/servo/servo.git
     cd servo
+    echo "Launch brew bundle"
     brew bundle install --file=~/dotfiles/Brewfile
 fi    
 echo "SECTION -> Dotfiles"
 # Clone our repo with dotfiles
-if [ ! -d $dir && ! has git 2>/dev/null ]; then
+if [ [! -d $dir] && [! has git 2>/dev/null] ]; then
     echo "Installing dotfiles repo"
     cd $dir
     echo "Clonning dotfiles repo"
