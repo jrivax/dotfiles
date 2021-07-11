@@ -12,15 +12,18 @@ if [ ! -d ~/workspace ]; then
     mkdir ~/workspace
 fi
 
-echo "Homebrew ( package management )"
+echo "SECTION -> Homebrew ( package management )"
 # Install Homebrew ( package management )
 if [ ! has brew 2>/dev/null ]; then
+    echo "Installing homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    echo "Installing Homebrew packages"
 fi    
-    brew bundle
+echo "Installing Homebrew packages"
+brew bundle
+echo "SECTION -> Dotfiles"
 # Clone our repo with dotfiles
 if [ ! -d $dir && ! has git 2>/dev/null ]; then
+    echo "Installing dotfiles repo"
     cd $dir
     echo "Clonning dotfiles repo"
     git clone https://github.com/jrivax/dotfiles.git
@@ -29,19 +32,24 @@ fi
 # open -a Hammerspoon
 
 # Install oh my zsh
+echo "SECTION -> zsh"
 if [ ! has sh 2>/dev/null ]; then
+    echo "installing zsh"
     cd ~
     /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi    
-
+echo "SECTION -> Powerlevel10k"
 # Install Powerlevel10k theme
 if [ ! has git 2>/dev/null ]; then
+    echo "installing Powerlevel10k"
     cd ~
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi    
 
+echo "SECTION -> zsh-autosuggestions"
 # Install zsh-autosuggestions
 if [ ! has git 2>/dev/null ]; then
+    echo "Installing zsh-autosuggestions"
     cd ~
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
