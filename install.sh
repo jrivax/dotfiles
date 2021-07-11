@@ -17,7 +17,9 @@ echo "SECTION -> Homebrew ( package management )"
 if ! hash brew 2>/dev/null; then
     echo "Installing homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    # Force to reinstall core due to packages formulas not found when brew search <package>
     rm -rf "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core"
+    echo "Launch brew tap core"
     brew tap homebrew/core
 fi    
 echo "Installing Homebrew packages"
