@@ -21,7 +21,7 @@ if ! hash brew 2>/dev/null; then
     rm -rf "/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core"
     echo "Launch brew tap core"
     brew tap homebrew/core
-fi    
+fi
 echo "Installing Homebrew packages"
 if hash brew 2>/dev/null; then
     echo "Launch brew bundle"
