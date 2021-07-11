@@ -28,7 +28,7 @@ if [ ! has git 2>/dev/null ]; then
 fi    
 echo "SECTION -> Dotfiles"
 # Clone our repo with dotfiles
-if [ [! -d $dir] && [! has git 2>/dev/null] ]; then
+if  [ ! -d $dir ] && [ ! has git 2>/dev/null ]; then
     echo "Installing dotfiles repo"
     cd ~
     echo "Clonning dotfiles repo"
