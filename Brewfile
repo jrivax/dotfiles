@@ -1,3 +1,8 @@
+tap "homebrew/core"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "buo/cask-upgrade"
+tap "homebrew/cask-fonts"
 cask "google-chrome"
 cask "spotify"
 cask "appcleaner"
