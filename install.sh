@@ -25,6 +25,8 @@ if [ hash git 2>/dev/null ] && [ hash brew 2>/dev/null ]; then
     cd servo
     echo "Launch brew bundle"
     brew bundle install --file=~/dotfiles/Brewfile
+else
+    echo "Nor git nor brew"    
 fi    
 echo "SECTION -> Dotfiles"
 # Clone our repo with dotfiles
