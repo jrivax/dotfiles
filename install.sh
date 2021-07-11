@@ -23,6 +23,7 @@ if [ ! has git 2>/dev/null ]; then
     git clone git@github.com:servo/servo.git
     cd servo
     brew bundle install --file=~/dotfiles/Brewfile
+fi    
 echo "SECTION -> Dotfiles"
 # Clone our repo with dotfiles
 if [ ! -d $dir && ! has git 2>/dev/null ]; then
