@@ -26,12 +26,13 @@ echo "Installing Homebrew packages"
 if hash brew 2>/dev/null; then
     echo "Launch brew bundle"
     brew bundle install --file=~/dotfiles/Brewfile
+    continue
 else
     echo "Nor git nor brew"    
 fi    
 echo "SECTION -> Dotfiles"
 # Clone our repo with dotfiles
-if  ! -d $dir && hash git 2>/dev/null; then
+if  [ ! -d $dir ] && hash git 2>/dev/null; then
     echo "Installing dotfiles repo"
     cd ~
     echo "Clonning dotfiles repo"
@@ -83,7 +84,7 @@ fi
 files=".p10k.zsh .zshrc .gitconfig"
 
 # Create a dir to move the configuration files there
-if ! -d $dir; then
+if [ ! -d $dir ]; then
     mkdir $dir
 fi   
 
@@ -101,6 +102,6 @@ source .macos
 cd ~
 touch .private-profile
 echo "create temporal file"
-if ! -d ~/tmp; then
+if [ ! -d ~/tmp ]; then
     mkdir ~/tmp
 fi
