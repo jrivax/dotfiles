@@ -62,7 +62,15 @@ if hash git 2>/dev/null; then
     cd ~
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
-
+echo "SECTION -> nerd fonts"
+# Install zsh-autosuggestions
+if hash git 2>/dev/null; then
+    echo "Installing nerd fonts"
+    cd ~/workspace
+    git clone --depth=1 https://github.com/romkatv/nerd-fonts.git
+    cd nerd-fonts
+    ./build 'Meslo/S/*'
+fi
 # Install LTS Node
 if hash nvm 2>/dev/null; then
     nvm install "lts/*"
