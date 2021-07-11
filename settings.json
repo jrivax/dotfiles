@@ -1,0 +1,32 @@
+{
+    "explorer.confirmDelete": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDragAndDrop": false,
+    "sonarlint.connectedMode.servers": [
+        {
+            "serverId": "devoSonarQube",
+            "serverUrl": "https://sonarqube.devo.internal/",
+            "token": "efe4621d63a5c35ca9ef5f94811a784813641971"
+        },
+    ],
+    "sonarlint.trace.server": "messages",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/Users/javierrivas/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.vscode-quarkus"
+    },
+    "material-ui-snippets.showNotesOnStartup": false,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "redhat.telemetry.enabled": false
+}
