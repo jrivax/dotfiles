@@ -14,11 +14,11 @@ fi
 
 echo "Homebrew ( package management )"
 # Install Homebrew ( package management )
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 if [ ! has brew 2>/dev/null ]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     echo "Installing Homebrew packages"
-    brew bundle
 fi    
+    brew bundle
 # Clone our repo with dotfiles
 if [ ! -d $dir && ! has git 2>/dev/null ]; then
     cd $dir
