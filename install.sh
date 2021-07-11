@@ -23,10 +23,7 @@ if ! hash brew 2>/dev/null; then
     brew tap homebrew/core
 fi    
 echo "Installing Homebrew packages"
-if hash git 2>/dev/null && hash brew 2>/dev/null; then
-    echo "Clone servo repo"
-    git clone https://github.com/servo/servo.git
-    cd servo
+if hash brew 2>/dev/null; then
     echo "Launch brew bundle"
     brew bundle install --file=~/dotfiles/Brewfile
 else
