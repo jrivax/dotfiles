@@ -74,14 +74,13 @@ if hash git 2>/dev/null; then
 fi
 # Install LTS Node
 if hash nvm 2>/dev/null; then
+    echo "install lts versions"
     nvm install "lts/*"
-else
-    echo "nvm has not been install"
 fi        
 
 # Configure profile
 
-files=".p10k.zsh .zshrc .gitconfig"
+files=".p10k.zsh .zshrc .gitconfig .npmrc"
 
 # Create a dir to move the configuration files there
 if [ ! -d $dir ]; then
