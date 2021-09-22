@@ -8,7 +8,7 @@ dir=~/dotfiles
 # Create workspace
 echo "create workspace"
 cd ~
-if ! -d ~/workspace; then
+if [ ! -d ~/workspace ] then
     mkdir ~/workspace
 fi
 
@@ -62,7 +62,7 @@ if hash git 2>/dev/null; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 echo "SECTION -> nerd fonts"
-# Install zsh-autosuggestions
+# Install nerd fonts
 if hash git 2>/dev/null; then
     echo "Installing nerd fonts"
     cd ~/workspace
