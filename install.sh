@@ -37,9 +37,7 @@ if  [ ! -d $dir ] && hash git 2>/dev/null; then
     cd ~
     echo "Clonning dotfiles repo"
     git clone https://github.com/jrivax/dotfiles.git
-fi    
-# Open Hammerspoon
-# open -a Hammerspoon
+fi
 
 # Install oh my zsh
 echo "SECTION -> zsh"
