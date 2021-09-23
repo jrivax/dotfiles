@@ -39,3 +39,7 @@ files with the config I usually use
         .p10k.zsh
         .npmrc
         .gitconfig
+
+file with MacOS config
+
+        .macos
