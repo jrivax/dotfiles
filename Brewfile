@@ -17,6 +17,9 @@ cask "postman"
 cask "sourcetree"
 cask "burp-suite"
 cask "docker"
+cask "vagrant"
+cask "virtualbox"
+cask "virtualbox-extension-pack"
 ######################################################################
 # Browser                                                            #
 ######################################################################
