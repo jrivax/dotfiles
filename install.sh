@@ -8,7 +8,7 @@ dir=~/dotfiles
 # Create workspace
 echo "create workspace"
 cd ~
-if [ ! -d ~/workspace ] then
+if [ ! -d ~/workspace ]; then
     mkdir ~/workspace
 fi
 
