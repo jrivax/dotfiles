@@ -4,6 +4,7 @@
 echo "Starting installation and configuration process, let's do magic :)"
 # Dotfiles directory
 dir=~/dotfiles
+files=".p10k.zsh .zshrc .gitconfig .npmrc"
 
 # Create workspace
 echo "create workspace"
@@ -40,12 +41,12 @@ if  [ ! -d $dir ] && hash git 2>/dev/null; then
 fi
 
 # Install oh my zsh
-echo "SECTION -> zsh"
-if ! hash /bin/bash 2>/dev/null; then
-    echo "installing zsh"
-    cd ~
-    /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-fi    
+# echo "SECTION -> zsh"
+# if ! hash /bin/bash 2>/dev/null; then
+#     echo "installing zsh"
+#     cd ~
+#     /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# fi    
 echo "SECTION -> Powerlevel10k"
 # Install Powerlevel10k theme
 if hash git 2>/dev/null; then
@@ -54,22 +55,22 @@ if hash git 2>/dev/null; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi    
 
-echo "SECTION -> zsh-autosuggestions"
-# Install zsh-autosuggestions
-if hash git 2>/dev/null; then
-    echo "Installing zsh-autosuggestions"
-    cd ~
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-fi
+# echo "SECTION -> zsh-autosuggestions"
+# # Install zsh-autosuggestions
+# if hash git 2>/dev/null; then
+#     echo "Installing zsh-autosuggestions"
+#     cd ~
+#     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# fi
 echo "SECTION -> nerd fonts"
 # Install nerd fonts
-if hash git 2>/dev/null; then
-    echo "Installing nerd fonts"
-    cd ~/workspace
-    git clone --depth=1 https://github.com/romkatv/nerd-fonts.git
-    cd nerd-fonts
-    ./build 'Meslo/S/*'
-fi
+# if hash git 2>/dev/null; then
+#     echo "Installing nerd fonts"
+#     cd ~/workspace
+#     git clone --depth=1 https://github.com/romkatv/nerd-fonts.git
+#     cd nerd-fonts
+#     ./build 'Meslo/S/*'
+# fi
 # Install LTS Node
 if hash nvm 2>/dev/null; then
     echo "install lts versions"
@@ -78,7 +79,6 @@ fi
 
 # Configure profile
 
-files=".p10k.zsh .zshrc .gitconfig .npmrc"
 
 # Create a dir to move the configuration files there
 if [ ! -d $dir ]; then
