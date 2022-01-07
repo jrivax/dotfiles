@@ -2,6 +2,7 @@ tap "homebrew/core"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "buo/cask-upgrade"
+tap "mongodb/brew"
 brew "mas"
 ######################################################################
 # Generalist                                                         #
@@ -17,9 +18,13 @@ cask "postman"
 cask "sourcetree"
 cask "burp-suite"
 cask "docker"
-cask "vagrant"
-cask "virtualbox"
-cask "virtualbox-extension-pack"
+# cask "vagrant"
+# cask "virtualbox"
+# cask "virtualbox-extension-pack"
+######################################################################
+# DB                                                                 #
+######################################################################
+brew "mongodb-community"
 ######################################################################
 # Browser                                                            #
 ######################################################################
@@ -37,9 +42,9 @@ brew "git"
 # Shell: iTerm2, zsh, oh-my-zsh plugins and themes                   #
 ######################################################################
 cask "iterm2"
-brew "zsh"
+# brew "zsh"
 brew "zsh-completions"
-brew "zsh-autosuggestions"
+# brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 tap "homebrew/cask-fonts"
 cask "font-meslo-for-powerline"
