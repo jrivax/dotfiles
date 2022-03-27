@@ -8,8 +8,9 @@ plugins=(git npm yarn zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=/usr/local/bin:/usr/local/sbin:~/bin:$PATH
-
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/.cargo/bin:$PATH
+export DISABLE_EMAIL_FLAG=FALSE 
+export RUN_IN_TEST_MODE=TRUE
 # Aliases
 alias gl="git log --all --decorate --oneline --graph"
 alias gs="git status"
@@ -57,3 +58,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 eval "$(rbenv init -)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
