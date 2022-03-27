@@ -1,8 +1,7 @@
 [user]
 	name = Javier Rivas
-	email = javier.rivas@devo.com
 [core]
-	excludesfile = /Users/javierrivas/.gitignore_global
+	excludesfile = /Users/redsift/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

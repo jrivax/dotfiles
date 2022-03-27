@@ -1,32 +1,93 @@
 {
-    "explorer.confirmDelete": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "tabnine.experimentalAutoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash"
     },
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "explorer.confirmDragAndDrop": false,
-    "sonarlint.connectedMode.servers": [
-        {
-            "serverId": "devoSonarQube",
-            "serverUrl": "https://sonarqube.devo.internal/",
-            "token": "efe4621d63a5c35ca9ef5f94811a784813641971"
-        },
-    ],
-    "sonarlint.trace.server": "messages",
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "java.jdt.ls.vmargs": "-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication -javaagent:\"/Users/javierrivas/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
-    "[json]": {
-        "editor.defaultFormatter": "HookyQR.beautify"
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"]
     },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+    "fish": {
+      "path": "fish",
+      "args": ["-l"]
     },
-    "[java]": {
-        "editor.defaultFormatter": "redhat.vscode-quarkus"
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
     },
-    "material-ui-snippets.showNotesOnStartup": false,
-    "terminal.integrated.fontFamily": "MesloLGS NF",
-    "redhat.telemetry.enabled": false
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "rosetta": {
+      "path": "arch",
+      "args": ["-x86_64", "/bin/zsh", "-l"],
+      "overrideName": true
+    }
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Cobalt2",
+  "editor.fontFamily": "'Cascadia Code PL', 'CascadiaCodePL', Consolas",
+  // first item for Windows, next item for macOS
+  // because I use sync settings for multiple OS
+  // setting font ligatures as https://github.com/microsoft/cascadia-code#font-features
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
+  // this is optional, it makes the weight of default font become lighter.
+  // Otherwise if we set font to 'Cascadia Code PL SemiLight' as it would be the same but it could'nt work with font ligatures.
+  "editor.fontWeight": "350",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          //following will be in italic (=FlottFlott)
+          "comment",
+          "entity.name.type.class", //class names
+          "keyword", //import, export, return…
+          "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js" //class keyword
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics)
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  }
 }

@@ -18,6 +18,7 @@ cask "postman"
 cask "sourcetree"
 cask "burp-suite"
 cask "docker"
+cask "runjs"
 # cask "vagrant"
 # cask "virtualbox"
 # cask "virtualbox-extension-pack"
@@ -38,6 +39,13 @@ brew "nvm"
 # Git                                                                #
 ######################################################################
 brew "git"
+######################################################################
+# Fonts                                                              #
+######################################################################
+cask "font-cascadia-code"
+cask "font-cascadia-code-pl"
+cask "font-cascadia-mono"
+cask "font-cascadia-mono-pl"
 ######################################################################
 # Shell: iTerm2, zsh, oh-my-zsh plugins and themes                   #
 ######################################################################
